@@ -37,8 +37,10 @@
 
 
 <hr noshade="noshade">
-<b><font color="#005128">Project Outline:</font></b><br> Batch repetition can significantly decrease pretraining costs. Vast quantities of data are required to pretrain large deep learning models, yet without terabytes of RAM, data cannot be stored in memory; this requires us to load data from storage (i.e., HDDs or SSDs) during pretraining. Typically, a batch of data is loaded from storage, and each sample is used as input for model pretraining before a new batch of data is loaded. With batch repetition, a batch is loaded and used as inputs for model pretraining <i>multiple times</i> before a new batch is loaded. This method was first demonstrated for the supervised training of CNNs and has very recently been leveraged to reduce IO costs for the self-supervised training of ViTs in video processing applications that face high data IO costs.<br><br>
-I will explore the limits of the number of times (M) each sample can be used before the next batch of data is loaded. Hoffer et al. explored M from 2 to 32 and found that data augmentation was crucial in enabling larger M values. However, the two papers extending batch repetition to ViT pretraining only experiment with M up to 8. I will experiment with much larger M values (reducing IO costs) during ViT pretraining and experiment with higher mask ratios (the fraction of patches that are masked from the model in masked autoencoding pretraining)--higher mask ratios increase the amount of effective data augmentation.
+<b><font color="#005128">Project Outline:</font></b>
+
+Without terabytes of RAM, the vast amounts of data required to pretrain large deep learning models cannot be stored in memory. With batch repetition, each training data point is sampled multiple times after being loaded from storage. First demonstrated for the supervised training of CNNs, batch repetition has been leveraged for the self-supervised training of ViTs in video processing applications. However, these video applications only use a batch repetition factor (M) of 8. I will experiment with much larger M values and sweep through mask ratios during masked autoencoding (MAE) pretraining. 
+
 <p><b><font color="#005128">Startup Paper(s):</font></b>
 <br>
 E. Hoffer, T. Ben-Nun, I. Hubara, N. Giladi, T. Hoefler, and D. Soudry, "Augment Your Batch: Improving Generalization Through Instance Repetition," in 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
