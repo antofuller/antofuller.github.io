@@ -37,19 +37,12 @@
 
 
 <hr noshade="noshade">
-<b><font color="#005128">Project Outline:</font></b>
-
-Without terabytes of RAM, the vast amounts of data required to pretrain large deep learning models cannot be stored in memory. With batch repetition, each training data point is sampled multiple times after being loaded from storage. First demonstrated for the supervised training of CNNs, batch repetition has been leveraged for the self-supervised training of ViTs in video processing applications. However, these video applications only use a batch repetition factor (M) of 8. I will experiment with much larger M values and sweep through mask ratios during masked autoencoding (MAE) pretraining. 
-
+<b><font color="#005128">Project Outline:</font></b><br> Batch repetition can significantly decrease pretraining costs. Vast quantities of data are required to pretrain large deep learning models, yet without terabytes of RAM, data cannot be stored in memory; this requires us to load data from storage (i.e., HDDs or SSDs) during pretraining. Typically, a batch of data is loaded from storage, and each sample is used as input for model pretraining before a new batch of data is loaded. With batch repetition, a batch is loaded and used as inputs for model pretraining <i>multiple times</i> before a new batch is loaded. This method was first demonstrated for the supervised training of CNNs and has very recently been leveraged to reduce IO costs for the self-supervised training of ViTs in video processing applications that face high data IO costs.<br><br>
+I will explore the limits of the number of times (M) each sample can be used before the next batch of data is loaded. Hoffer et al. explored M from 2 to 32 and found that data augmentation was crucial in enabling larger M values. However, the two papers extending batch repetition to ViT pretraining only experiment with M up to 8. I will experiment with much larger M values (reducing IO costs) during ViT pretraining and experiment with higher mask ratios (the fraction of patches that are masked from the model in masked autoencoding pretraining)--higher mask ratios increase the amount of effective data augmentation.
 <p><b><font color="#005128">Startup Paper(s):</font></b>
 <br>
 E. Hoffer, T. Ben-Nun, I. Hubara, N. Giladi, T. Hoefler, and D. Soudry, "Augment Your Batch: Improving Generalization Through Instance Repetition," in 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
 <br>
-R. Girdhar, A. El-Nouby, M. Singh, K. V. Alwala, A. Joulin, and I. Misra, "OmniMAE: Single Model Masked Pretraining on Images and Videos." arXiv, Jun. 16, 2022. Available: http://arxiv.org/abs/2206.08356
-<br>
-C. Feichtenhofer, H. Fan, Y. Li, and K. He, "Masked Autoencoders As Spatiotemporal Learners." arXiv, May 18, 2022. Available: http://arxiv.org/abs/2205.09113
-<br>
-K. He, X. Chen, S. Xie, Y. Li, P. Dollar, and R. Girshick, "Masked Autoencoders Are Scalable Vision Learners," in 2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
 </p>
 
 <p><b><font color="#005128">Deliverables:</font></b></p>
@@ -79,8 +72,10 @@ Paper</font></a> (PDF file created from LATEX template)</div>
 <p><b><font color="#005128">Relevant References:</font></b></p>
 
 <ul>
-
-  <li>list all relevant papers and include links to their PDF files</li>
+    <li>S. Fort, A.Brock, R.Pascanu, S.De, S. L. Smith "Drawing Multiple Augmentation Samples Per Image During Training Efficiently Decreases Test Error"  arXiv, Jun. 16, 2022.</li>
+    <li>K. He, X. Chen, S. Xie, Y. Li, P. Dollar, and R. Girshick, "Masked Autoencoders Are Scalable Vision Learners," in 2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
+    <li>R. Girdhar, A. El-Nouby, M. Singh, K. V. Alwala, A. Joulin, and I. Misra, "OmniMAE: Single Model Masked Pretraining on Images and Videos." arXiv, Jun. 16, 2022.</li>
+    <li>C. Feichtenhofer, H. Fan, Y. Li, and K. He, "Masked Autoencoders As Spatiotemporal Learners." arXiv, May 18, 2022.</li>
 </ul>
 
 </body></html>
