@@ -19,3 +19,5 @@ social: false  # includes social icons at the bottom of the page
 I am a Ph.D. student at Carleton University, supervised by <a href='http://www.sce.carleton.ca/faculty/green/green.php'>Jim Green</a>. I am broadly interested in deep learning — a *bit* more specifically, I am interested in computer vision, self-supervised learning, transformers, and multimodal applications.
 
 I have a B.Eng. in Aerospace Engineering (2015) and an M.A.Sc. in Systems and Computer Engineering (2023), both from Carleton University.
+
+I am at Vector Institute for the summer, working with <a href='https://imaginarynumber.net/research/'>Evan Shelhamer</a>. 
