@@ -26,11 +26,13 @@
       }
     }
     .cofirst::after{
-      content:" *";
-      color:#e11d48;            /* change color as you like */
+      content:"*";
+      color:#e11d48;
       font-weight:800;
-      font-size:1.25em;         /* “large” */
-      vertical-align:text-top;  /* nudges star up a bit */
+      font-size:1.25em;
+      display:inline-block;
+      transform: translateY(-0.28em); /* raise it */
+      margin-left:.15em;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
@@ -91,10 +93,7 @@
         <div style="flex: 0 0 200px; text-align: center;">
           <img src="prof_pic.jpg" alt="Anthony Fuller" style="max-width: 200px; border-radius: 8px;">
         </div>
-      
       </div>
-
-
       <section id="publications">
         <h2>Selected Publications</h2>
         <ul class="clean">
