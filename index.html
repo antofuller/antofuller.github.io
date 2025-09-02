@@ -25,6 +25,13 @@
         --accent: #38bdf8;
       }
     }
+    .cofirst::after{
+      content:" *";
+      color:#e11d48;            /* change color as you like */
+      font-weight:800;
+      font-size:1.25em;         /* “large” */
+      vertical-align:text-top;  /* nudges star up a bit */
+    }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
     a{color:var(--link);text-decoration:none}
@@ -106,7 +113,10 @@
           <li class="pub">
             <div class="title">LookWhere? Efficient Visual Recognition by Learning Where to Look and What to See from Self-Supervision</div>
             <div class="meta">
-              Anthony Fuller, Yousef Yassin, Junfeng Wen, Daniel G. Kyrollos, Tarek Ibrahim, James R. Green, Evan Shelhamer
+              <span class="cofirst">Anthony Fuller</span>,
+              <span class="cofirst">Yousef Yassin</span>,
+              Junfeng Wen, Daniel G. Kyrollos, Tarek Ibrahim, James R. Green, Evan Shelhamer
+
             </div>
             <div class="meta">
               arXiv, 2025
