@@ -13,6 +13,7 @@
       --card: #f5f7fb;
       --border: #e6e9f2;
       --accent: #0ea5e9;
+      --shade-light: rgba(0, 0, 0, 0.03);
     }
     @media (prefers-color-scheme: dark){
       :root{
@@ -23,6 +24,7 @@
         --card: #121a35;
         --border: #253056;
         --accent: #38bdf8;
+        --shade-light: rgba(255, 255, 255, 0.03);
       }
     }
     .cofirst::after{
@@ -75,6 +77,19 @@
     .pill{display:inline-block;background:var(--accent);color:white;border-radius:999px;padding:2px 8px;font-size:.72rem;margin-left:8px}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Ubuntu Mono",Consolas,monospace}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    
+    /* Alternating paper backgrounds */
+    .pub {
+      padding: 16px 20px;
+      margin: 0 -20px;
+      border-radius: 8px;
+    }
+    .pub.shade-right {
+      background: linear-gradient(to right, transparent 0%, transparent 40%, var(--shade-light) 100%);
+    }
+    .pub.shade-left {
+      background: linear-gradient(to left, transparent 0%, transparent 40%, var(--shade-light) 100%);
+    }
   </style>
 </head>
 
@@ -108,7 +123,7 @@
         <h2>Selected Publications</h2>
         <span class="cofirst">co-first author</span> / <span class="colast">co-last author</span>
         <ul class="clean">
-          <li class="pub">
+          <li class="pub shade-left">
             <div class="title">Self-<i>Soup</i>ervision: Cooking Model Soups without Labels</div>
             <div class="meta">
               <span class="author-strong">Anthony Fuller</span>, James R. Green, Evan Shelhamer
@@ -117,7 +132,7 @@
               arXiv (coming very soon), 2026
             </div>
           </li>
-          <li class="pub">
+          <li class="pub shade-right">
             <div class="title">Thicker and Quicker: A Jumbo Token for Fast Plain Vision Transformers</div>
             <div class="meta">
               <span class="author-strong">Anthony Fuller</span>, Yousef Yassin, Daniel G. Kyrollos,
@@ -131,7 +146,7 @@
               <a href="https://arxiv.org/abs/2502.15021">arXiv</a> / <a href="https://github.com/antofuller/jumbo">code</a>
             </div>
           </li>
-          <li class="pub">
+          <li class="pub shade-left">
             <div class="title">LookWhere? Efficient Visual Recognition by Learning Where to Look and What to See from Self-Supervision</div>
             <div class="meta">
               <span class="cofirst"><span class="author-strong">Anthony Fuller</span></span>,
@@ -148,7 +163,7 @@
               <a href="https://arxiv.org/abs/2505.18051">arXiv</a> / <a href="https://github.com/antofuller/lookwhere">code</a>
             </div>
           </li>
-          <li class="pub">
+          <li class="pub shade-right">
             <div class="title">Galileo: Learning Global & Local Features of Many Remote Sensing Modalities</div>
             <div class="meta">
               <span class="cofirst">Gabriel Tseng</span>,
@@ -164,7 +179,7 @@
               <a href="https://arxiv.org/abs/2502.09356">arXiv</a> / <a href="https://github.com/nasaharvest/galileo">code</a>
             </div>
           </li>
-          <li class="pub">
+          <li class="pub shade-left">
             <div class="title">LookHere: Vision Transformers with Directed Attention Generalize and Extrapolate</div>
             <div class="meta">
               <span class="author-strong">Anthony Fuller</span>, Daniel G. Kyrollos, Yousef Yassin, James R. Green
@@ -176,7 +191,7 @@
               <a href="https://arxiv.org/abs/2405.13985">arXiv</a> / <a href="https://github.com/GreenCUBIC/lookhere">code</a>
             </div>
           </li>
-          <li class="pub">
+          <li class="pub shade-right">
             <div class="title">CROMA: Remote Sensing Representations with Contrastive Radar-Optical Masked Autoencoders</div>
             <div class="meta">
               <span class="author-strong">Anthony Fuller</span>, Koreen Millard, James R. Green
@@ -188,7 +203,7 @@
               <a href="https://arxiv.org/abs/2311.00566">arXiv</a> / <a href="https://github.com/antofuller/CROMA">code</a>
             </div>
           </li>
-          <li class="pub">
+          <li class="pub shade-left">
             <div class="title">SatViT: Pretraining Transformers for Earth Observation</div>
             <div class="meta">
               <span class="author-strong">Anthony Fuller</span>, Koreen Millard, James R. Green
